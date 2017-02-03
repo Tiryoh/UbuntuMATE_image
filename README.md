@@ -31,6 +31,8 @@ $ rm .lesshst
 $ cd /mnt/etc
 $ sudo rm -rf NetworkManager
 $ sudo find /mnt/var/log/ -type f -name \* -exec cp -f /dev/null {} \;
+$ sudo dd if=/dev/zero of=/mnt/dummy bs=4096
+$ sudo rm /mnt/dummy
 $ cd ~/
 $ sudo umount /mnt
 $ sudo kpartx -d /dev/loop0
