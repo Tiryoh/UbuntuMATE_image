@@ -54,4 +54,7 @@ $ sudo parted ubuntu.img unit b p
 
 tiryoh at dynabook-R73W4M in ~ 
 $ sudo truncate -s 8053063680 ubuntu.img
+
+tiryoh at dynabook-R73W4M in ~ 
+$ xz -zkv -T 0 ubuntu.img
 ```
