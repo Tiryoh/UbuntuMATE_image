@@ -17,7 +17,7 @@ sudo chmod -R o+r /usr/src/linux-headers-4.1.19-v7+/*
 sudo apt purge network-manager brltty brasero account-plugin* adwaita-icon-theme thunderbird vlc scratch mate-* ubuntu-mate* libreoffice*
 sudo apt autoremove 
 sudo raspi-config
-sudo vim /etc/cmdline.txt #net.ifnames=0
+sudo vim /boot/cmdline.txt #net.ifnames=0
 ```
 
 ```
