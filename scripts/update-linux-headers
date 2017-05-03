@@ -1,0 +1,16 @@
+#!/bin/bash -eux
+
+# Raspberry Pi 3 Ubuntu MATE linux-headers installer
+#
+# Copyright (c) 2017 Tiryoh<tiryoh@gmail.com>
+#
+# This software is released under the MIT License.
+# http://opensource.org/licenses/mit-license.php
+
+[[ -e /usr/src/linux-headers-`uname -r` ]] && echo 'Already installed linux-headers.' && exit 0
+
+mkdir -p ~/tmp/linux-headers
+wget -N http://phil.lavin.me.uk/downloads/linux-headers-rpi/linux-headers-`uname -r`_`uname -r`-2_armhf.deb -P ~/tmp/linux-headers || { echo 'Download error'; exit 1; }
+sudo dpkg -i ~/tmp/linux-headers/linux-headers-`uname -r`_`uname -r`-2_armhf.deb 
+sudo chmod -R g+r /usr/src/linux-headers-`uname -r`/*
+sudo chmod -R o+r /usr/src/linux-headers-`uname -r`/*
