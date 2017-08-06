@@ -7,17 +7,13 @@ sudo systemctl disable apt-daily.service
 sudo systemctl disable apt-daily.timer 
 sudo apt update
 sudo apt upgrade
-sudo apt install  git raspi-config
-sudo apt install dkms gcc-4.7
-sudo apt-get install -f
-wget http://phil.lavin.me.uk/downloads/linux-headers-rpi/linux-headers-4.1.19-v7%2B_4.1.19-v7%2B-2_armhf.deb
-sudo dpkg -i linux-headers-4.1.19-v7+_4.1.19-v7+-2_armhf.deb 
-sudo chmod -R g+r /usr/src/linux-headers-4.1.19-v7+/*
-sudo chmod -R o+r /usr/src/linux-headers-4.1.19-v7+/*
-sudo apt purge network-manager brltty brasero account-plugin* adwaita-icon-theme thunderbird vlc scratch mate-* ubuntu-mate* libreoffice*
+sudo apt install git dkms raspberrypi-kernel-headers
+sudo vim /boot/cmdline.txt #net.ifnames=0
+sudo apt purge libreoffice-* youtube-* sonic-pi thunderbird mincraft-pi scratch
+sudo apt autoremove 
+sudo apt purge mate-* ubuntu-mate-* account-plugin-* gnome-* network-manager brltty brasero dvd+rw-tools firefox vlc* rhythmbox
 sudo apt autoremove 
 sudo raspi-config
-sudo vim /boot/cmdline.txt #net.ifnames=0
 ```
 
 ```
