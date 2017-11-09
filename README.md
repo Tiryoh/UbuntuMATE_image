@@ -25,7 +25,7 @@ $ rm .bash_history && touch .bash_history
 $ rm .viminfo
 $ rm .lesshst
 $ cd /mnt/etc
-$ sudo rm -rf NetworkManager
+$ sudo rm -rf NetworkManager/system-connections/*
 $ sudo find /mnt/var/log/ -type f -name \* -exec cp -f /dev/null {} \;
 $ sudo dd if=/dev/zero of=/mnt/dummy bs=4096
 $ sudo rm /mnt/dummy
