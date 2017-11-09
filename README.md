@@ -26,6 +26,9 @@ $ rm .viminfo
 $ rm .lesshst
 $ cd /mnt/etc
 $ sudo rm -rf NetworkManager/system-connections/*
+$ sudo sed -e "s/lp/#lp/g" modules-load.d/cups-filters.conf
+$ sudo sed -e "s/ppdev/#ppdev/g" modules-load.d/cups-filters.conf
+$ sudo sed -e "s/parport_pc/#parport_pc/g" modules-load.d/cups-filters.conf
 $ sudo find /mnt/var/log/ -type f -name \* -exec cp -f /dev/null {} \;
 $ sudo dd if=/dev/zero of=/mnt/dummy bs=4096
 $ sudo rm /mnt/dummy
